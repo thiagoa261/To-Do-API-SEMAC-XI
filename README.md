@@ -1,98 +1,148 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# 📝 To-Do API - SEMAC XI
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+API para gerenciamento de tarefas desenvolvida em NestJS como projeto prático do minicurso ministrado por mim na **Semana da Computação - IFSP Catanduva**.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## 🚀 Tecnologias Utilizadas
 
-## Description
+- **[NestJS](https://nestjs.com/)** - Framework Node.js progressivo
+- **[MongoDB](https://www.mongodb.com/)** - Banco de dados NoSQL
+- **[TypeScript](https://www.typescriptlang.org/)** - Superset tipado do JavaScript
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## 📋 Funcionalidades
 
-## Project setup
+- ✅ Criar nova tarefa
+- ✅ Atualizar tarefa existente
+- ✅ Deletar tarefa
+- ✅ Buscar tarefa por ID
+- ✅ Listar tarefas com filtros
+- ✅ Paginação de resultados
 
-```bash
-$ npm install
-```
+## 🛠️ Instalação e Configuração
 
-## Compile and run the project
+### Pré-requisitos
+
+- [Node.js](https://nodejs.org/) (versão 18+)
+- [npm](https://www.npmjs.com/) ou [bun](https://bun.com)
+- [MongoDB](https://www.mongodb.com/) local ou MongoDB Atlas
+
+### 1️⃣ Clone o repositório
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+git clone https://github.com/thiagoa261/To-Do-API-SEMAC-XI.git
+cd To-Do-API-SEMAC-XI
 ```
 
-## Run tests
+### 2️⃣ Instale as dependências
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npm install
 ```
 
-## Deployment
+### 3️⃣ Configure as variáveis de ambiente
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+Crie um arquivo `.env` na raiz do projeto:
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+```env
+PORT=3000
+MONGO_URL=mongodb://localhost:27017/todo-semac
+```
+
+### 4️⃣ Execute a aplicação
 
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+# Modo de desenvolvimento
+npm run start:dev
+
+# Modo de produção
+npm run build
+npm run start:prod
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+A API estará disponível em `http://localhost:3000`
 
-## Resources
+## 📚 Endpoints da API
 
-Check out a few resources that may come in handy when working with NestJS:
+### 📌 Base URL
+```
+http://localhost:3000/todo-list
+```
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+### 🔗 Rotas Disponíveis
 
-## Support
+| Método | Endpoint | Descrição |
+|--------|----------|-----------|
+| `POST` | `/todo-list` | Criar nova tarefa |
+| `POST` | `/todo-list/filter` | Listar tarefas com filtros |
+| `GET` | `/todo-list/:id` | Buscar tarefa por ID |
+| `PUT` | `/todo-list/:id` | Atualizar tarefa por ID |
+| `DELETE` | `/todo-list/:id` | Deletar tarefa por ID |
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### 📝 Exemplos de Uso
 
-## Stay in touch
+#### Criar Tarefa
+```bash
+POST /todo-list
+Content-Type: application/json
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+{
+  "title": "Estudar NestJS",
+  "isCompleted": false
+}
+```
 
-## License
+#### Filtrar Tarefas
+```bash
+POST /todo-list/filter
+Content-Type: application/json
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+{
+  "offset": 0,
+  "limit": 10,
+  "filter": {
+    "isCompleted": false
+  }
+}
+```
+
+#### Buscar por ID
+```bash
+GET /todo-list/507f1f77bcf86cd799439011
+```
+
+#### Atualizar Tarefa
+```bash
+PUT /todo-list/507f1f77bcf86cd799439011
+Content-Type: application/json
+
+{
+  "title": "Estudar NestJS - Concluído!",
+  "isCompleted": true
+}
+```
+
+#### Deletar Tarefa
+```bash
+DELETE /todo-list/507f1f77bcf86cd799439011
+```
+
+## 🏗️ Estrutura do Projeto
+
+```
+src/
+├── 🎮 app.controller.ts       # Controlador principal
+├── 📦 app.module.ts          # Módulo principal - orquestra toda a aplicação NestJS
+├── ⚙️ app.service.ts         # Serviço principal
+├── 🚀 main.ts                # Inicializa servidor e configurações
+├── 📊 models/                # Camada de dados - schemas e modelos do MongoDB
+│   ├── 📦 models.module.ts   # Módulo de schemas - exporta modelos para toda app
+│   └── 🏷️ task.ts           # Schema Task - define estrutura da tarefa no banco
+└── 📝 to-do-list/           # Módulo de tarefas
+    ├── 🎮 to-do-list.controller.ts  # Controlador to-do
+    ├── ✅ to-do-list.dto.ts         # DTOs para validação
+    ├── 📦 to-do-list.module.ts      # Módulo to-do
+    └── ⚙️ to-do-list.service.ts     # Serviço to-do - Lógica de negócio
+```
+
+## ‍💻 Sobre o Instrutor
+  - GitHub: [@thiagoa261](https://github.com/thiagoa261)
+  - LinkedIn: [linkedin.com/in/thiagoaio](https://www.linkedin.com/in/thiagoaio)
